@@ -12,9 +12,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('post.index', [
-            'countPosts' => Post::count(),
-        ]);
+        return view('post.index');
     }
 
     /**

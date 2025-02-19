@@ -10,7 +10,7 @@ class Table extends Component
     public function render()
     {
         return view('livewire.post.table', [
-            'posts' => Post::select('id', 'title', 'slug', 'content', 'created_by')->paginate(),
+            'posts' => Post::select('id', 'title', 'slug', 'content', 'created_by')->paginate(5),
         ]);
     }
 }
