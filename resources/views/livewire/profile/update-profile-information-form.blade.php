@@ -41,6 +41,10 @@ new class extends Component
         $user->save();
 
         $this->dispatch('profile-updated', name: $user->name);
+        $this->dispatch('showToast', [
+            'type' => 'success',
+            'message' => 'Profile information updated successfully.'
+        ]);
     }
 
     /**

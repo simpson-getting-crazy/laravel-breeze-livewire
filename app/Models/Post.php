@@ -11,7 +11,7 @@ class Post extends Model
 
     public function scopeSearch($query, $value)
     {
-        $query->where('title', 'like', "%{$value}%")
-            ->orWhere('content', 'like', "%{$value}%");
+        $query->where('title', 'ilike', "%{$value}%")
+            ->orWhere('content', 'ilike', "%{$value}%");
     }
 }
