@@ -15,6 +15,14 @@
                     <x-heroicon-s-user-group class="w-6 h-6 text-red-500" />
                 </x-stats-card>
             </div>
+            <div class="p-6 text-gray-900">
+                <x-stats-card
+                    title="Total Posts"
+                    value="{{ $countPosts }}"
+                >
+                    <x-heroicon-o-newspaper class="w-6 h-6 text-red-500" />
+                </x-stats-card>
+            </div>
         </div>
     </div>
 </x-app-layout>

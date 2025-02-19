@@ -25,7 +25,7 @@
                     class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                     wire:navigate>
                     <x-heroicon-s-plus class="h-4 w-4 mr-2" />
-                    Add User
+                    Add Post
                 </a>
             </div>
         </div>
@@ -133,7 +133,7 @@
                                     <a href="" class="text-blue-600 hover:text-blue-900" title="Edit">
                                         <x-heroicon-o-pencil-square class="h-5 w-5" />
                                     </a>
-                                    <button type="button" wire:click="deleteConfirmation({{ $post->id }})" class="text-red-600 hover:text-red-900" title="Delete">
+                                    <button type="button" wire:click.prevent="deleteConfirmation({{ $post->id }})" class="text-red-600 hover:text-red-900" title="Delete">
                                         <x-heroicon-o-trash class="h-5 w-5" />
                                     </button>
                                 </div>
