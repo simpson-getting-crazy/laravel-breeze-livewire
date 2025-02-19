@@ -133,7 +133,7 @@
                                     <a href="" class="text-blue-600 hover:text-blue-900" title="Edit">
                                         <x-heroicon-o-pencil-square class="h-5 w-5" />
                                     </a>
-                                    <button type="button" class="text-red-600 hover:text-red-900" title="Delete">
+                                    <button type="button" wire:click="deleteConfirmation({{ $post->id }})" class="text-red-600 hover:text-red-900" title="Delete">
                                         <x-heroicon-o-trash class="h-5 w-5" />
                                     </button>
                                 </div>
