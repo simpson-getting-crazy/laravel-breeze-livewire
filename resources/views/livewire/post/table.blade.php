@@ -12,9 +12,12 @@
                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <x-heroicon-o-magnifying-glass class="h-5 w-5 text-gray-400" />
                     </div>
-                    <input type="text" name="search"
+                    <input
+                        type="text"
+                        name="search"
                         class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500 sm:text-sm"
-                        placeholder="Search post..." value="{{ request('search') }}">
+                        placeholder="Search post..." value="{{ request('search') }}"
+                        wire:model.live.debounce.300ms="search">
                 </div>
 
                 <!-- Add Button -->
@@ -33,41 +36,34 @@
                 <div class="flex space-x-4">
                     <div>
                         <label for="status" class="text-sm font-medium text-gray-700">Sort by:</label>
-                        <select id="sort" name="sort"
-                            class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm rounded-md">
-                            <option value="name_asc" {{ request('sort') == 'name_asc' ? 'selected' : '' }}>Name (A-Z)
-                            </option>
-                            <option value="name_desc" {{ request('sort') == 'name_desc' ? 'selected' : '' }}>Name (Z-A)
-                            </option>
-                            <option value="created_at_desc" {{ request('sort') == 'created_at_desc' ? 'selected' : '' }}>
-                                Newest</option>
-                            <option value="created_at_asc" {{ request('sort') == 'created_at_asc' ? 'selected' : '' }}>
-                                Oldest</option>
+                        <select
+                            id="sort"
+                            name="sort"
+                            class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm rounded-md"
+                            wire:model.live="sort">
+                            @foreach(['asc', 'desc'] as $sort)
+                                <option value="{{ $sort }}">
+                                    {{ ucfirst($sort) . 'ending' }}
+                                </option>
+                            @endforeach
                         </select>
                     </div>
 
                     <div>
-                        <label for="status" class="text-sm font-medium text-gray-700">Status:</label>
-                        <select id="status" name="status"
-                            class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm rounded-md">
-                            <option value="">All</option>
-                            <option value="active" {{ request('status') == 'active' ? 'selected' : '' }}>Active
-                            </option>
-                            <option value="inactive" {{ request('status') == 'inactive' ? 'selected' : '' }}>
-                                Inactive</option>
+                        <label for="status" class="text-sm font-medium text-gray-700">Per Page:</label>
+                        <select
+                            id="status"
+                            name="status"
+                            class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm rounded-md"
+                            wire:model.live="perPage">
+                            @foreach ([5, 10, 25, 50] as $perPage)
+                                <option value="{{ $perPage }}">
+                                    {{ $perPage }}
+                                </option>
+                            @endforeach
                         </select>
                     </div>
 
-                    <div>
-                        <label for="role" class="text-sm font-medium text-gray-700">Role:</label>
-                        <select id="role" name="role"
-                            class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm rounded-md">
-                            <option value="">All</option>
-                            <option value="admin" {{ request('role') == 'admin' ? 'selected' : '' }}>Admin
-                            </option>
-                            <option value="user" {{ request('role') == 'user' ? 'selected' : '' }}>User</option>
-                        </select>
-                    </div>
                 </div>
             </div>
         </div>
