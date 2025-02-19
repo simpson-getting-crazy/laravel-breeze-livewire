@@ -10,7 +10,7 @@
             <div class="p-6 text-gray-900">
                 <x-stats-card
                     title="Total Users"
-                    value="{{ $count_users }}"
+                    value="{{ $countUsers }}"
                 >
                     <x-heroicon-s-user-group class="w-6 h-6 text-red-500" />
                 </x-stats-card>

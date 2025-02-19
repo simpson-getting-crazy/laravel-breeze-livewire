@@ -11,7 +11,7 @@ class DashboardController extends Controller
     public function index(): View
     {
         return view('dashboard', [
-            'count_users' => User::count(),
+            'countUsers' => User::count(),
         ]);
     }
 }
