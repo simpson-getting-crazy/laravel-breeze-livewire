@@ -13,6 +13,17 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <style>
+            #nprogress .bar {
+                background: #DC2626 !important;
+            }
+
+            #nprogress .peg {
+                box-shadow: 0 0 10px #DC2626, 0 0 5px #DC2626 !important;
+                opacity: 1.0;
+            }
+        </style>
     </head>
     <body class="font-sans text-gray-900 antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">

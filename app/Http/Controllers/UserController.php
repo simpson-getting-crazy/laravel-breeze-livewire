@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('post.index');
+        return view('user.index');
     }
 
     /**
@@ -20,14 +20,14 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('post.create');
+        return view('user.create');
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit(User $user)
     {
-        return view('post.edit', compact('post'));
+        return view('user.edit', compact('user'));
     }
 }

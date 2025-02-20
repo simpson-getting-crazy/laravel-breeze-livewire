@@ -12,6 +12,17 @@
 
         <!-- Styles -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <style>
+            #nprogress .bar {
+                background: #DC2626 !important;
+            }
+
+            #nprogress .peg {
+                box-shadow: 0 0 10px #DC2626, 0 0 5px #DC2626 !important;
+                opacity: 1.0;
+            }
+        </style>
     </head>
     <body class="antialiased font-sans">
         <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">

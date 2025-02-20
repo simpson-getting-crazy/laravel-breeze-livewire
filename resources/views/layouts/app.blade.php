@@ -21,6 +21,11 @@
             #nprogress .bar {
                 background: #DC2626 !important;
             }
+
+            #nprogress .peg {
+                box-shadow: 0 0 10px #DC2626, 0 0 5px #DC2626 !important;
+                opacity: 1.0;
+            }
         </style>
     </head>
     <body class="font-sans antialiased">
