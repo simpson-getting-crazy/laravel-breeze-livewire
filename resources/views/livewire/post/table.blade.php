@@ -130,7 +130,7 @@
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <div class="flex justify-end space-x-2">
-                                    <a href="" class="text-blue-600 hover:text-blue-900" title="Edit">
+                                    <a href="{{ route('post.edit', $post->id) }}" class="text-blue-600 hover:text-blue-900" title="Edit" wire:navigate>
                                         <x-heroicon-o-pencil-square class="h-5 w-5" />
                                     </a>
                                     <button type="button" wire:click.prevent="deleteConfirmation({{ $post->id }})" class="text-red-600 hover:text-red-900" title="Delete">
