@@ -23,6 +23,22 @@
                     <x-heroicon-o-newspaper class="w-6 h-6 text-red-500" />
                 </x-stats-card>
             </div>
+            <div class="p-6 text-gray-900">
+                <x-stats-card
+                    title="Total Available Routes"
+                    value="{{ $countTotalRoutes }}"
+                >
+                    <x-heroicon-s-arrow-path-rounded-square class="w-6 h-6 text-red-500" />
+                </x-stats-card>
+            </div>
+            <div class="p-6 text-gray-900">
+                <x-stats-card
+                    title="Total Available Migration"
+                    value="{{ $countTotalMigrations }}"
+                >
+                    <x-heroicon-c-circle-stack class="w-6 h-6 text-red-500" />
+                </x-stats-card>
+            </div>
         </div>
     </div>
 </x-app-layout>
