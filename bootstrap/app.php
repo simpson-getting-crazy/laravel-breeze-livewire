@@ -11,7 +11,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->alias(['visitor-counter' => App\Http\Middleware\VisitorCounter::class]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
